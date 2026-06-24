@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="张富运的个人主页，关注化工过程数字孪生、CFD 数据建模、在线参数估计与智能控制。"
+    />
+    <title>张富运 | Personal Website</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="返回首页">张富运</a>
+      <nav class="nav" aria-label="主导航">
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#projects">Projects</a>
+        <a href="#notes">Notes</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Chemical Process Digital Twin · CFD · Intelligent Control</p>
+          <h1>张富运</h1>
+          <p class="lead">
+            面向工业过程建模、在线预测和智能控制的工程研究者。当前工作关注化工搅拌釜与
+            CSTR 数字孪生，长期方向包括 CFD 数据驱动建模、在线参数估计、代理模型和强化学习控制。
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#projects">查看项目</a>
+            <a class="button secondary" href="#contact">联系方式</a>
+          </div>
+        </div>
+        <aside class="profile-panel" aria-label="个人信息摘要">
+          <div class="profile-mark">ZY</div>
+          <dl>
+            <div>
+              <dt>Current Focus</dt>
+              <dd>Industrial CSTR digital twin</dd>
+            </div>
+            <div>
+              <dt>Methods</dt>
+              <dd>CFD, surrogate modeling, online estimation</dd>
+            </div>
+            <div>
+              <dt>Goal</dt>
+              <dd>Reliable online process prediction and control</dd>
+            </div>
+          </dl>
+        </aside>
+      </section>
+
+      <section id="about" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">About</p>
+          <h2>个人简介</h2>
+        </div>
+        <div class="content-grid">
+          <p>
+            研究背景来自流体仿真、过程建模和工程数据分析。当前更关注可落地的工业过程数字孪生：
+            不是只做离线展示，而是把仿真模型、现场数据、代理模型和在线修正放到同一条工作流中。
+          </p>
+          <p>
+            个人主页用于整理研究方向、项目进展、技术笔记和可公开的工程成果。这里不会把某一个项目包装成全部履历，
+            CSTR 数字孪生只是当前最重要的工作内容之一。
+          </p>
+        </div>
+      </section>
+
+      <section id="work" class="section band">
+        <div class="section-heading">
+          <p class="eyebrow">Work Direction</p>
+          <h2>关注方向</h2>
+        </div>
+        <div class="pill-list">
+          <span>化工过程数字孪生</span>
+          <span>连续搅拌釜反应器</span>
+          <span>CFD 数据建模</span>
+          <span>在线参数估计</span>
+          <span>Physics-informed surrogate model</span>
+          <span>智能优化与强化学习控制</span>
+        </div>
+      </section>
+
+      <section id="projects" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Projects</p>
+          <h2>项目与实践</h2>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <p class="card-kicker">Current Work</p>
+            <h3>CSTR Digital Twin</h3>
+            <p>
+              面向连续搅拌釜过程的数字孪生客户端与算法原型，包含开放环仿真、数据导入、在线参数维护、
+              模型对比和后续控制接口。
+            </p>
+            <a href="https://github.com/Afr1yne/cstr-digital-twin">GitHub Repository</a>
+          </article>
+          <article class="card">
+            <p class="card-kicker">Modeling</p>
+            <h3>Online Parameter Estimation</h3>
+            <p>
+              基于仿真数据和监测数据估计反应动力学、换热、扭矩等关键参数，用于模型维护和在线预测精度修正。
+            </p>
+          </article>
+          <article class="card">
+            <p class="card-kicker">CFD Data</p>
+            <h3>CFD-informed Process Modeling</h3>
+            <p>
+              将 STAR-CCM+ 等 CFD 输出转化为可用于代理模型、监测指标和参数修正的数据资产。
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="notes" class="section band">
+        <div class="section-heading">
+          <p class="eyebrow">Notes</p>
+          <h2>技术笔记</h2>
+        </div>
+        <div class="note-list">
+          <article>
+            <h3>Digital Twin Roadmap</h3>
+            <p>整理工业搅拌釜从离线仿真走向在线预测、在线维护和控制优化的技术路线。</p>
+          </article>
+          <article>
+            <h3>CFD to Surrogate Model</h3>
+            <p>记录 CFD 数据如何清洗、降维、构造监督学习样本，并用于后续 PINN 或代理模型训练。</p>
+          </article>
+          <article>
+            <h3>Control and RL</h3>
+            <p>跟踪强化学习控制在化工过程中的接口形式、约束处理和安全验证问题。</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>联系与链接</h2>
+          <p>
+            后续可以在这里放邮箱、简历 PDF、Google Scholar、ORCID 或其他公开链接。当前先保留 GitHub 入口。
+          </p>
+        </div>
+        <div class="contact-links">
+          <a href="https://github.com/Afr1yne">GitHub</a>
+          <a href="https://github.com/Afr1yne/cstr-digital-twin">CSTR Digital Twin</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© 2026 张富运. Built for GitHub Pages.</p>
+    </footer>
+  </body>
+</html>
