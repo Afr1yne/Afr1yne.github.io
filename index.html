@@ -1,162 +1,227 @@
 <!doctype html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="张富运的个人主页，关注化工过程数字孪生、CFD 数据建模、在线参数估计与智能控制。"
-    />
-    <title>张富运 | Personal Website</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <a class="brand" href="#top" aria-label="返回首页">张富运</a>
-      <nav class="nav" aria-label="主导航">
-        <a href="#about">About</a>
-        <a href="#work">Work</a>
-        <a href="#projects">Projects</a>
-        <a href="#notes">Notes</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>体积无限 · 简约版框架</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 6 C 5 6 2 16 16 26 C 30 16 27 6 16 6 Z' fill='none' stroke='%232563eb' stroke-width='2.6'/%3E%3C/svg%3E" />
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap" />
+<style>
+/* ===== 设计令牌（简约） ===== */
+:root{
+  --bg:#ffffff;
+  --surface:#f7f9fc;
+  --line:#e6eaf1;
+  --text:#131a24;
+  --muted:#5c6773;
+  --muted-2:#8a94a3;
+  --brand:#2563eb;      /* 主蓝 */
+  --brand-2:#3b82f6;
+  --brand-soft:#eef4ff;
+  --warm:#d97706;       /* 点缀，克制使用 */
+  --radius:12px;
+  --max:1040px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--text);
+  font-family:"Noto Sans SC",system-ui,-apple-system,"Segoe UI",sans-serif;
+  line-height:1.75;-webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+.eyebrow{color:var(--brand);font-size:.78rem;font-weight:700;letter-spacing:.16em}
 
-    <main id="top">
-      <section class="hero">
-        <div class="hero-copy">
-          <p class="eyebrow">Chemical Process Digital Twin · CFD · Intelligent Control</p>
-          <h1>张富运</h1>
-          <p class="lead">
-            面向工业过程建模、在线预测和智能控制的工程研究者。当前工作关注化工搅拌釜与
-            CSTR 数字孪生，长期方向包括 CFD 数据驱动建模、在线参数估计、代理模型和强化学习控制。
-          </p>
-          <div class="hero-actions">
-            <a class="button primary" href="#projects">查看项目</a>
-            <a class="button secondary" href="#contact">联系方式</a>
-          </div>
-        </div>
-        <aside class="profile-panel" aria-label="个人信息摘要">
-          <div class="profile-mark">ZY</div>
-          <dl>
-            <div>
-              <dt>Current Focus</dt>
-              <dd>Industrial CSTR digital twin</dd>
-            </div>
-            <div>
-              <dt>Methods</dt>
-              <dd>CFD, surrogate modeling, online estimation</dd>
-            </div>
-            <div>
-              <dt>Goal</dt>
-              <dd>Reliable online process prediction and control</dd>
-            </div>
-          </dl>
-        </aside>
-      </section>
+/* ===== 顶栏 ===== */
+.site-header{border-bottom:1px solid var(--line);background:rgba(255,255,255,.9);backdrop-filter:blur(12px);position:sticky;top:0;z-index:50}
+.header-inner{max-width:var(--max);margin:0 auto;padding:15px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.1rem}
+.brand .mark{width:30px;height:30px}
+.nav{display:flex;flex-wrap:wrap;gap:4px 22px;color:var(--muted);font-size:.94rem}
+.nav a:hover{color:var(--brand)}
 
-      <section id="about" class="section">
-        <div class="section-heading">
-          <p class="eyebrow">About</p>
-          <h2>个人简介</h2>
-        </div>
-        <div class="content-grid">
-          <p>
-            研究背景来自流体仿真、过程建模和工程数据分析。当前更关注可落地的工业过程数字孪生：
-            不是只做离线展示，而是把仿真模型、现场数据、代理模型和在线修正放到同一条工作流中。
-          </p>
-          <p>
-            个人主页用于整理研究方向、项目进展、技术笔记和可公开的工程成果。这里不会把某一个项目包装成全部履历，
-            CSTR 数字孪生只是当前最重要的工作内容之一。
-          </p>
-        </div>
-      </section>
+/* ===== Hero ===== */
+.hero{padding:88px 0 72px;border-bottom:1px solid var(--line)}
+.hero-inner{display:grid;grid-template-columns:1fr auto;gap:56px;align-items:center}
+.hero h1{font-family:"Noto Serif SC",serif;font-size:clamp(2.4rem,6vw,3.6rem);font-weight:700;line-height:1.15;margin:16px 0 18px}
+.hero .lead{color:var(--muted);font-size:1.06rem;max-width:620px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 20px;border-radius:9px;font-weight:600;font-size:.96rem;border:1px solid var(--line)}
+.btn.primary{background:var(--brand);color:#fff;border-color:var(--brand)}
+.btn.primary:hover{background:var(--brand-2)}
+.btn.ghost{color:var(--text)}
+.btn.ghost:hover{border-color:var(--brand);color:var(--brand)}
+.avatar-wrap{width:180px;height:180px;flex:none}
+.avatar-wrap img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:1px solid var(--line);box-shadow:0 12px 40px rgba(17,24,39,.08)}
 
-      <section id="work" class="section band">
-        <div class="section-heading">
-          <p class="eyebrow">Work Direction</p>
-          <h2>关注方向</h2>
-        </div>
-        <div class="pill-list">
-          <span>化工过程数字孪生</span>
-          <span>连续搅拌釜反应器</span>
-          <span>CFD 数据建模</span>
-          <span>在线参数估计</span>
-          <span>Physics-informed surrogate model</span>
-          <span>智能优化与强化学习控制</span>
-        </div>
-      </section>
+/* ===== 区块 ===== */
+.section{padding:64px 0}
+.section-head{margin-bottom:32px;max-width:720px}
+.section-head h2{font-family:"Noto Serif SC",serif;font-size:clamp(1.5rem,3.4vw,2rem);margin-top:8px;font-weight:700}
+.section-head p.sub{color:var(--muted);margin-top:10px}
 
-      <section id="projects" class="section">
-        <div class="section-heading">
-          <p class="eyebrow">Projects</p>
-          <h2>项目与实践</h2>
-        </div>
-        <div class="cards">
-          <article class="card">
-            <p class="card-kicker">Current Work</p>
-            <h3>CSTR Digital Twin</h3>
-            <p>
-              面向连续搅拌釜过程的数字孪生客户端与算法原型，包含开放环仿真、数据导入、在线参数维护、
-              模型对比和后续控制接口。
-            </p>
-            <a href="https://github.com/Afr1yne/cstr-digital-twin">GitHub Repository</a>
-          </article>
-          <article class="card">
-            <p class="card-kicker">Modeling</p>
-            <h3>Online Parameter Estimation</h3>
-            <p>
-              基于仿真数据和监测数据估计反应动力学、换热、扭矩等关键参数，用于模型维护和在线预测精度修正。
-            </p>
-          </article>
-          <article class="card">
-            <p class="card-kicker">CFD Data</p>
-            <h3>CFD-informed Process Modeling</h3>
-            <p>
-              将 STAR-CCM+ 等 CFD 输出转化为可用于代理模型、监测指标和参数修正的数据资产。
-            </p>
-          </article>
-        </div>
-      </section>
+/* ===== 方向标签 ===== */
+.pill-list{display:flex;flex-wrap:wrap;gap:10px}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;background:var(--surface);border:1px solid var(--line);border-radius:999px;font-size:.92rem;font-weight:500}
+.pill svg{width:17px;height:17px;color:var(--brand)}
+.pill:hover{border-color:var(--brand);color:var(--brand)}
 
-      <section id="notes" class="section band">
-        <div class="section-heading">
-          <p class="eyebrow">Notes</p>
-          <h2>技术笔记</h2>
-        </div>
-        <div class="note-list">
-          <article>
-            <h3>Digital Twin Roadmap</h3>
-            <p>整理工业搅拌釜从离线仿真走向在线预测、在线维护和控制优化的技术路线。</p>
-          </article>
-          <article>
-            <h3>CFD to Surrogate Model</h3>
-            <p>记录 CFD 数据如何清洗、降维、构造监督学习样本，并用于后续 PINN 或代理模型训练。</p>
-          </article>
-          <article>
-            <h3>Control and RL</h3>
-            <p>跟踪强化学习控制在化工过程中的接口形式、约束处理和安全验证问题。</p>
-          </article>
-        </div>
-      </section>
+/* ===== 文章卡片 ===== */
+.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;display:flex;flex-direction:column;gap:10px}
+.card .tag{font-size:.74rem;font-weight:700;letter-spacing:.08em;color:var(--brand)}
+.card h3{font-size:1.02rem;font-weight:600;line-height:1.45}
+.card p{color:var(--muted);font-size:.9rem;flex:1}
 
-      <section id="contact" class="section contact">
+/* ===== 关注 ===== */
+.contact{display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:36px}
+.contact p{color:var(--muted);margin-top:8px;max-width:600px}
+.contact-links{display:flex;flex-wrap:wrap;gap:12px;justify-content:flex-end}
+
+/* ===== 页脚 ===== */
+.site-footer{border-top:1px solid var(--line);padding:26px 0 42px;color:var(--muted);font-size:.88rem}
+.footer-inner{max-width:var(--max);margin:0 auto;padding:0 28px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+/* ===== 响应式 ===== */
+@media(max-width:820px){
+  .hero-inner{grid-template-columns:1fr;gap:32px}
+  .hero{padding:56px 0 48px}
+  .avatar-wrap{width:128px;height:128px}
+  .card-grid{grid-template-columns:repeat(2,1fr)}
+  .contact{grid-template-columns:1fr;padding:28px}
+  .contact-links{justify-content:flex-start}
+}
+@media(max-width:540px){
+  .header-inner{flex-direction:column;align-items:flex-start;gap:10px}
+  .nav{flex-wrap:wrap;gap:4px 14px}
+  .card-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== 顶栏 ===== -->
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="#top">
+      <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 6 C 5 6 2 16 16 26 C 30 16 27 6 16 6 Z" stroke="#2563eb" stroke-width="2.6"/></svg>
+      <span>体积无限</span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a href="#direction">方向</a>
+      <a href="#articles">文章</a>
+      <a href="#contact">关注</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div>
+        <span class="eyebrow">CFD · OpenFOAM · 技术分享</span>
+        <h1>体积无限</h1>
+        <p class="lead">一个专注 CFD 与 OpenFOAM 的技术公众号：LES、拉格朗日多相流、湍流模型、数值方法、源码解析与实际算例，分享来自真正跑过的算例和看过的源码。</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#articles">查看文章</a>
+          <a class="btn ghost" href="#contact">关注公众号</a>
+        </div>
+      </div>
+      <div class="avatar-wrap">
+        <img src="assets/avatar.png" alt="体积无限头像" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 方向 ===== -->
+  <section id="direction" class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">FOCUS</span>
+        <h2>关注方向</h2>
+        <p class="sub">内容覆盖 CFD 数值方法到 OpenFOAM 实际工程案例，强调可复现、有证据的技术分享。</p>
+      </div>
+      <div class="pill-list">
+        <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 6 C6 2 9 2 12 6 C15 10 18 10 21 6"/><path d="M3 12 C6 8 9 8 12 12 C15 16 18 16 21 12"/><path d="M3 18 C6 14 9 14 12 18 C15 22 18 22 21 18"/></svg>CFD 数值方法</span>
+        <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7 L20 7"/><path d="M4 12 L20 12"/><path d="M4 17 L20 17"/><path d="M8 7 L8 17"/><path d="M13 7 L13 17"/><path d="M17 7 L17 17"/></svg>OpenFOAM</span>
+        <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 3 a5 5 0 0 1 0 10 a5 5 0 0 1 0 -10"/><path d="M12 11 a5 5 0 0 1 0 10 a5 5 0 0 1 0 -10"/></svg>LES 大涡模拟</span>
+        <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="6" cy="8" r="2"/><circle cx="16" cy="6" r="1.6"/><circle cx="18" cy="15" r="2"/><circle cx="9" cy="17" r="1.6"/><circle cx="12" cy="11" r="1.2"/></svg>拉格朗日多相流</span>
+        <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 15 L9 8 L13 12 L18 5"/><circle cx="18" cy="5" r="1.4"/></svg>湍流模型</span>
+        <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M7 4 L19 4"/><path d="M7 8 L19 8"/><path d="M7 12 L19 12"/><path d="M7 16 L19 16"/><path d="M7 20 L19 20"/><path d="M9 4 L9 20"/><path d="M14 4 L14 20"/></svg>源码解析</span>
+        <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 19 L5 12"/><path d="M10 19 L10 6"/><path d="M15 19 L15 9"/><path d="M20 19 L20 13"/><path d="M3 21 L21 21"/></svg>实际算例</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 文章 ===== -->
+  <section id="articles" class="section" style="border-top:1px solid var(--line)">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">ARTICLES</span>
+        <h2>已发布文章</h2>
+        <p class="sub">文章清单取自你的公众号已发布目录，后续可分类展示或链接到原文。</p>
+      </div>
+      <div class="card-grid">
+        <article class="card">
+          <span class="tag">案例 · 涡识别</span>
+          <h3>OpenFOAM 圆柱绕流 · Q 准则涡识别与脱涡频率分析</h3>
+          <p>基于真实算例展示涡结构识别与频率分析方法。</p>
+        </article>
+        <article class="card">
+          <span class="tag">源码 · 解析</span>
+          <h3>OpenFOAM 层流模型源码解析</h3>
+          <p>沿代码调用链梳理层流模型的实现。</p>
+        </article>
+        <article class="card">
+          <span class="tag">教程 · 流固耦合</span>
+          <h3>OpenFOAM-CalculiX 柔性杆流固耦合教程</h3>
+          <p>可复现的耦合算例步骤。</p>
+        </article>
+        <article class="card">
+          <span class="tag">案例 · 多相流</span>
+          <h3>vofToLagrangian 系列</h3>
+          <p>VOF 到拉格朗日颗粒的转换系列。</p>
+        </article>
+        <article class="card">
+          <span class="tag">案例 · 风机</span>
+          <h3>turbinesFoam 致动线风机案例</h3>
+          <p>致动线模型在风机仿真中的实际应用。</p>
+        </article>
+        <article class="card">
+          <span class="tag">教程 · 脚本</span>
+          <h3>OpenFOAM + Python / pyOFTools 案例</h3>
+          <p>用 Python 扩展 OpenFOAM 工作流。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 关注 ===== -->
+  <section id="contact" class="section">
+    <div class="wrap">
+      <div class="contact">
         <div>
-          <p class="eyebrow">Contact</p>
-          <h2>联系与链接</h2>
-          <p>
-            后续可以在这里放邮箱、简历 PDF、Google Scholar、ORCID 或其他公开链接。当前先保留 GitHub 入口。
-          </p>
+          <span class="eyebrow">FOLLOW</span>
+          <h2 style="font-family:'Noto Serif SC',serif;font-size:clamp(1.4rem,3.2vw,1.9rem);margin-top:6px;font-weight:700">关注体积无限</h2>
+          <p>微信公众号搜索「体积无限」，获取更多 CFD / OpenFOAM 技术文章与可复现算例。</p>
         </div>
         <div class="contact-links">
-          <a href="https://github.com/Afr1yne">GitHub</a>
-          <a href="https://github.com/Afr1yne/cstr-digital-twin">CSTR Digital Twin</a>
+          <a class="btn ghost" href="#top">返回顶部</a>
         </div>
-      </section>
-    </main>
+      </div>
+    </div>
+  </section>
+</main>
 
-    <footer class="site-footer">
-      <p>© 2026 张富运. Built for GitHub Pages.</p>
-    </footer>
-  </body>
+<!-- ===== 页脚 ===== -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>© 2026 体积无限 · CFD / OpenFOAM 技术分享</p>
+    <p>简约版框架预览</p>
+  </div>
+</footer>
+
+</body>
 </html>
