@@ -75,6 +75,14 @@ a{color:inherit;text-decoration:none}
 .card p{color:var(--muted);font-size:.9rem;flex:1}
 
 /* ===== 关注 ===== */
+.platform-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.platform-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:flex;flex-direction:column;gap:8px}
+.platform-card .pf{display:flex;align-items:center;gap:10px;font-weight:600}
+.platform-card .pf svg{width:22px;height:22px;color:var(--brand);flex:none}
+.platform-card .pn{color:var(--muted);font-size:.92rem;line-height:1.5}
+.platform-card .acct{font-size:.86rem;color:var(--muted-2)}
+.platform-card .small{font-size:.78rem;color:var(--muted-2);line-height:1.5}
+.contact-wrap{display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:36px}
 .contact{display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:36px}
 .contact p{color:var(--muted);margin-top:8px;max-width:600px}
 .contact-links{display:flex;flex-wrap:wrap;gap:12px;justify-content:flex-end}
@@ -89,6 +97,7 @@ a{color:inherit;text-decoration:none}
   .hero{padding:56px 0 48px}
   .avatar-wrap{width:128px;height:128px}
   .card-grid{grid-template-columns:repeat(2,1fr)}
+  .platform-grid{grid-template-columns:repeat(2,1fr)}
   .contact{grid-template-columns:1fr;padding:28px}
   .contact-links{justify-content:flex-start}
 }
@@ -198,14 +207,63 @@ a{color:inherit;text-decoration:none}
     </div>
   </section>
 
-  <!-- ===== 关注 ===== -->
+  <!-- ===== 全平台 ===== -->
   <section id="contact" class="section">
     <div class="wrap">
-      <div class="contact">
+      <div class="section-head">
+        <span class="eyebrow">PLATFORMS</span>
+        <h2>全平台关注</h2>
+        <p class="sub">一个品牌，多个入口。以下均为同名账号，可按平台搜索关注。</p>
+      </div>
+      <div class="platform-grid">
+        <div class="platform-card">
+          <div class="pf">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M7 7 L7.01 7"/><path d="M17 7 L17.01 7"/><path d="M7 17 L7.01 17"/><path d="M17 17 L17.01 17"/></svg>
+            <span>小程序</span>
+          </div>
+          <div class="pn">流体仿真工具平台</div>
+          <div class="acct">析流智算</div>
+          <div class="small">OpenFOAM 后处理 · Python 参考代码 · 常用工程计算 · 开源项目资源</div>
+        </div>
+        <div class="platform-card">
+          <div class="pf">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5 H20 V18 H4 Z"/><path d="M4 7 L12 13 L20 7"/></svg>
+            <span>公众号</span>
+          </div>
+          <div class="pn">CFD / OpenFOAM 技术分享</div>
+          <div class="acct">体积无限</div>
+          <div class="small">LES · 多相流 · 湍流模型 · 源码解析 · 实际算例</div>
+        </div>
+        <div class="platform-card">
+          <div class="pf">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12 C4 7 7.5 4 12 4 C16.5 4 20 7 20 12 C20 16 17 19 13.5 19.5"/><circle cx="9" cy="10" r="1"/><circle cx="13" cy="10" r="1"/><circle cx="11" cy="14" r="1"/></svg>
+            <span>小红书</span>
+          </div>
+          <div class="pn">图文案例与教程</div>
+          <div class="acct">体积无限</div>
+          <div class="small">技术文章的可视化呈现与案例分享</div>
+        </div>
+        <div class="platform-card">
+          <div class="pf">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8 L12 3 L21 8 L21 16 L12 21 L3 16 Z"/><path d="M12 3 L12 21"/><path d="M3 8 L12 13 L21 8"/></svg>
+            <span>闲鱼 / 淘宝</span>
+          </div>
+          <div class="pn">OpenFOAM 代做服务</div>
+          <div class="acct">体积无限</div>
+          <div class="small">网格划分 · 算例搭建 · 计算排错 · 结果后处理</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 关注引导 ===== -->
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="contact-wrap">
         <div>
           <span class="eyebrow">FOLLOW</span>
           <h2 style="font-family:'Noto Serif SC',serif;font-size:clamp(1.4rem,3.2vw,1.9rem);margin-top:6px;font-weight:700">关注体积无限</h2>
-          <p>微信公众号搜索「体积无限」，获取更多 CFD / OpenFOAM 技术文章与可复现算例。</p>
+          <p style="color:var(--muted);margin-top:8px;max-width:620px">微信公众号搜索「体积无限」，获取更多 CFD / OpenFOAM 技术文章与可复现算例。</p>
         </div>
         <div class="contact-links">
           <a class="btn ghost" href="#top">返回顶部</a>
@@ -219,7 +277,6 @@ a{color:inherit;text-decoration:none}
 <footer class="site-footer">
   <div class="footer-inner">
     <p>© 2026 体积无限 · CFD / OpenFOAM 技术分享</p>
-    <p>简约版框架预览</p>
   </div>
 </footer>
 
